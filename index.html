@@ -9,7 +9,7 @@
         <div class="nav"> 
             <img src="images/Qx8uR89.png" class="logo">
             
-            <input type="text" style="text-align: center;"class="login" placeholder="Ingresa tu usuario">    
+            <input type="text" id="Nombre" style="text-align: center;"class="login" placeholder="Ingresa tu usuario">    
         </div>       
     </header>
 <div class="container">
@@ -26,7 +26,7 @@
                 <b>Ciudad</b>: Tokyo, Japon
                 <br>
                 Trabajando en <b>Lawn N</b>   
-            <button id="btn-follow" name="btn-follow">Seguir</button>   
+            <button id="btn-follow" onclick="botonSeguir()">Seguir</button>   
         </div>              
     </div>
     <br>
@@ -37,8 +37,8 @@
             <br>
             <img class="publication-photo" src="images/bq9db41.jpeg">
             <br>
-            <button id="btn-like" name="btn-like">Me gusta</button>
-            <label id="likes"><b>200 </b> likes</label>
+            <button id="btn-like" >Me gusta</button>
+            <label id="likes" type="number"><b>200</b> likes</label>
             <br>
             <h3>Comentarios</h3>
             <br>
@@ -46,8 +46,13 @@
             <br>
             <b>Kathleen J Rennie</b> Que recuerdos!
             <br>
+            <div id="comentarioNuevo">
+                
+            </div>
+            
             <br>
-            <input type="text" class="comentario" placeholder="Deja tu comentario..."><button id="btn-comentar"name="btn-comentar">Comentar</button>
+            <input type="text" class="comentario" id="comentario" placeholder="Deja tu comentario..."><button id="btn-coment">Comentar</button>
+            <div id="mensajeError"></div>
         </div>
     </div>
     <div class="bloque-c">
@@ -58,6 +63,7 @@
             metropolis unica. Desde rascacielos deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro inspiracion en cada rincon de esta increible ciudad.
         </div>
     </div>
-</div>   
+</div>  
+<script src="js/script.js"></script> 
 </body>
 </html>

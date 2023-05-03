@@ -65,10 +65,12 @@ header{
     border-radius: 8px;
     background:dodgerblue;
     border: 0;
+    color: var(--color-white);
     padding: 10px;
-    float: right;
-    
+    float: right;    
 }
+
+
 #btn-like{
     border-radius: 8px;
     background:rgb(209, 232, 255);
@@ -93,12 +95,14 @@ header{
     margin: 30px;
     line-height: 40px;
 }
-#btn-comentar{
+#btn-coment{
     border-radius: 8px;
     background:dodgerblue;
     border: 0;
+    color: var(--color-white);
     padding: 10px;
-    float: right;
+    float: right;  
+    
 }
 .comentario{
     border-radius: 8px;
@@ -121,4 +125,12 @@ header{
 .publication-photo{
     width: 100%;
     border-radius: 8px;
+}
+#btnEliminar{
+    border-radius: 8px;
+    background:rgb(255, 70, 70);
+    border: 0;
+    color: var(--color-white);
+    padding: 10px;
+    float: right;  
 }
