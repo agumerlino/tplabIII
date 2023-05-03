@@ -1,0 +1,124 @@
+:root {
+    --color-primary: #00d1a0;
+    --color-back: #ededed;
+    --color-white: white;
+}
+html{
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-back);
+}
+.container{
+    margin: 5em;
+    height: 100vh;
+    gap: 1rem;
+    display: grid;
+    grid-template-areas: "a a a"
+    "b b c"
+    "b b d"
+    "b b d";
+}
+header{
+    background: var(--color-primary);
+   
+    
+}
+
+.profile_photo {
+    width: 15%;
+    border-radius: 50%;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-color: blue;
+    
+}
+.nav{
+    text-align: right;
+    
+}
+.logo{
+    float:left;
+    height: 40px;
+    margin: 10px;
+    margin-left: 30px;
+}
+.login {
+    border-radius: 8px;
+    outline: none;
+    border: 0;
+    margin: 20px;
+    height: 30px !important;
+}
+.bloque-a{
+    background: var(--color-white);
+    grid-area: a;
+    line-height: 200%;
+    border-radius: 8px;
+    margin: 30px;
+    
+}
+.perfil{
+    justify-content: center;
+    margin: 30px;
+}
+#btn-follow{
+    border-radius: 8px;
+    background:dodgerblue;
+    border: 0;
+    padding: 10px;
+    float: right;
+    
+}
+#btn-like{
+    border-radius: 8px;
+    background:rgb(209, 232, 255);
+    border: 0;
+    color: dodgerblue;
+    padding: 10px;
+    float: left;
+}
+#likes{
+    float: right;
+    
+}
+.bloque-b{
+    background: var(--color-white);
+    grid-area: b;
+    border-radius: 1.5%;
+    margin: 30px;
+   
+
+}
+.publicacion{
+    margin: 30px;
+    line-height: 40px;
+}
+#btn-comentar{
+    border-radius: 8px;
+    background:dodgerblue;
+    border: 0;
+    padding: 10px;
+    float: right;
+}
+.comentario{
+    border-radius: 8px;
+    outline: none;
+    border: 0;
+    background-color: rgb(243, 243, 243);
+    height: 30px !important;
+    width:80%;
+}
+.bloque-c{
+    background: var(--color-white);
+    grid-area: c;
+    border-radius: 1.5%;
+    margin: 30px;
+}
+.parrafo{
+    margin: 30px;
+    line-height: 30px;
+}
+.publication-photo{
+    width: 100%;
+    border-radius: 8px;
+}
