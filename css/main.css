@@ -57,6 +57,9 @@ header{
     margin: 30px;
     
 }
+.error{
+    color: red;
+}
 .perfil{
     justify-content: center;
     margin: 30px;
@@ -70,7 +73,14 @@ header{
     float: right;    
 }
 
-
+.btnIngresar{
+    border-radius: 8px;
+    background:rgb(14, 104, 77);
+    border: 0;
+    color: var(--color-white);
+    padding: 10px;
+      
+}
 #btn-like{
     border-radius: 8px;
     background:rgb(209, 232, 255);
@@ -126,11 +136,12 @@ header{
     width: 100%;
     border-radius: 8px;
 }
-#btnEliminar{
-    border-radius: 8px;
-    background:rgb(255, 70, 70);
-    border: 0;
-    color: var(--color-white);
-    padding: 10px;
-    float: right;  
-}
+.btnEliminar {
+    background-color: #f3787883;
+    color: rgb(241, 7, 7);
+    border: none;
+    padding: 0.4rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }

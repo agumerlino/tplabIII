@@ -3,67 +3,73 @@
 <head>
     <title>GLOBO</title>
     <link rel="stylesheet" href="css/main.css" />  
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
 </head>
 <body>
-    <header>
-        <div class="nav"> 
-            <img src="images/Qx8uR89.png" class="logo">
-            
-            <input type="text" id="Nombre" style="text-align: center;"class="login" placeholder="Ingresa tu usuario">    
-        </div>       
-    </header>
-<div class="container">
-    <div class="bloque-a">
-        <div class="perfil">
-            <img class="profile_photo" src="images/99qgQJy.jpeg">
-                <h1><b>Jane Doe</b></h1>
-                <b>Email</b>: jane_doe@email.com
-                <br>
-                <b>Fecha de nacimiento</b>: 01/05/1996
-                <br>
-                <b>Telefono</b>: 9189369585
-                <br>
-                <b>Ciudad</b>: Tokyo, Japon
-                <br>
-                Trabajando en <b>Lawn N</b>   
-            <button id="btn-follow" onclick="botonSeguir()">Seguir</button>   
-        </div>              
-    </div>
-    <br>
-    
-    <div class="bloque-b">
-        <div class="publicacion">
-            Publicado hace 1 semana
-            <br>
-            <img class="publication-photo" src="images/bq9db41.jpeg">
-            <br>
-            <button id="btn-like" >Me gusta</button>
-            <label id="likes" type="number"><b>200</b> likes</label>
-            <br>
-            <h3>Comentarios</h3>
-            <br>
-            <b>Juan Perez</b> Wow esta foto es sorprendente
-            <br>
-            <b>Kathleen J Rennie</b> Que recuerdos!
-            <br>
-            <div id="comentarioNuevo">
-                
+    <div id="app">
+            <header>
+                <div class="nav"> 
+                    <img src="images/Qx8uR89.png" class="logo">
+                    
+                    <input type="text" id="Nombre" style="text-align: center;"class="login" v-model="usuario" placeholder="Ingresa un usuario">
+                    <button @click="ingresar" class="btnIngresar" type="button">Ingresar</button>
+                    <div class="error">{{ errorUsuario }}</div>    
+                </div>       
+            </header>
+        <div class="container">
+            <div class="bloque-a">
+                <div class="perfil">
+                    <img class="profile_photo" src="images/99qgQJy.jpeg">
+                        <h1><b>Jane Doe</b></h1>
+                        <b>Email</b>: jane_doe@email.com
+                        <br>
+                        <b>Fecha de nacimiento</b>: 01/05/1996
+                        <br>
+                        <b>Telefono</b>: 9189369585
+                        <br>
+                        <b>Ciudad</b>: Tokyo, Japon
+                        <br>
+                        Trabajando en <b>Lawn N</b>   
+                    <button id="btn-follow" @click="cambiarBtnSeguir">{{ botonSeguir }}</button>   
+                </div>              
             </div>
-            
             <br>
-            <input type="text" class="comentario" id="comentario" placeholder="Deja tu comentario..."><button id="btn-coment">Comentar</button>
-            <div id="mensajeError"></div>
-        </div>
+            
+            <div class="bloque-b">
+                <div class="publicacion">
+                    Publicado hace 1 semana
+                    <br>
+                    <img class="publication-photo" src="images/bq9db41.jpeg">
+                    <br>
+                    <button id="btn-like" @click="sumarMegusta"  >{{ botonMegusta }}</button>
+                    <label id="likes" type="number"><b>{{ cantMegusta }}</b> likes</label>
+                    <br>
+                    <h3>Comentarios</h3>
+                    <br>
+                    <b>Juan Perez</b> Wow esta foto es sorprendente
+                    <br>
+                    <b>Kathleen J Rennie</b> Que recuerdos!
+                    <br>
+                    <div v-for="(comentario, index) in Comentarios" :key="index" >
+                        <span><b>{{ comentario.usuario + " "}}</b> {{ comentario.comentario}}</span>
+                        <button class="btnEliminar" @click="eliminar(index)">Eliminar</button>
+                    </div>                             
+                    <input type="text" placeholder="Deja un comentario..." v-model="comentario" class="comentario">
+                    <button id="btn-coment" :disabled="!usuario" @click="comentar" type="button" >Comentar</button>
+                    
+                    <div class="error">{{ errorComentario }}</div>
+                </div>
+            </div>
+            <div class="bloque-c">
+                <div class="parrafo">
+                    <h2>Sobre mi</h2> 
+                    Hola a todos, Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio, Japon. Me encanta capturar la escencia
+                    de la vida urbana a traves de mi lente, explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en esta
+                    metropolis unica. Desde rascacielos deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro inspiracion en cada rincon de esta increible ciudad.
+                </div>
+            </div>
+        </div>  
+        <script src="js/main.js"></script> 
     </div>
-    <div class="bloque-c">
-        <div class="parrafo">
-            <h2>Sobre mi</h2> 
-            Hola a todos, Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio, Japon. Me encanta capturar la escencia
-            de la vida urbana a traves de mi lente, explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en esta
-            metropolis unica. Desde rascacielos deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro inspiracion en cada rincon de esta increible ciudad.
-        </div>
-    </div>
-</div>  
-<script src="js/script.js"></script> 
 </body>
 </html>
